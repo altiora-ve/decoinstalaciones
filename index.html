@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecoInstalaciones C.A. | Enlaces</title>
+    <!-- Importamos los íconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('fondo.jpg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 130px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.6));
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Tarjeta de Horarios Dinámica */
+        .status-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 16px 20px;
+            width: 100%;
+            margin-bottom: 25px;
+            text-align: left;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .status-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .status-header.open { color: #2ecc71; }
+        .status-header.closed { color: #95a5a6; }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .status-dot.open {
+            background-color: #2ecc71;
+            box-shadow: 0 0 10px #2ecc71;
+        }
+
+        .status-dot.closed {
+            background-color: #7f8c8d;
+            box-shadow: none;
+        }
+
+        .status-days {
+            font-size: 13px;
+            color: #dddddd;
+            margin-bottom: 4px;
+        }
+
+        .status-hours {
+            font-size: 13px;
+            color: #aaaaaa;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Botones de acción */
+        .link-button {
+            background: rgba(30, 30, 30, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 40px;
+            padding: 14px 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .link-button:hover {
+            background: rgba(50, 50, 50, 0.9);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .button-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .instagram-bg { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .maps-bg { background: linear-gradient(45deg, #4285F4, #34A853); }
+        .star-bg { background: linear-gradient(45deg, #f1c40f, #f39c12); }
+
+        .button-text h3 {
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .button-text p {
+            font-size: 12px;
+            color: #aaaaaa;
+            text-align: left;
+        }
+
+        .arrow-icon {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+
+        /* Pie de página corporativo con el logo de Altiora */
+        .footer-brand {
+            margin-top: 10px; /* <--- Reducido para subirlo */
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 80%;
+            padding-top: 8px; /* <--- Reducido para completar el espacio */
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px; !important;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #888888;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-logo-img {
+            height: 70px; /* Tamaño pequeño y elegante */
+            width: auto;
+            filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.5));
+            transition: transform 0.2s ease;
+        }
+
+        .footer-brand:hover {
+            opacity: 0.85;
+        }
+
+        .footer-brand:hover .footer-logo-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo de DecoInstalaciones -->
+        <img src="logo.png.png" alt="DecoInstalaciones Logo" class="logo-img" onerror="this.style.display='none'">
+        
+        <h1>DecoInstalaciones C.A.</h1>
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i> San Cristóbal · Venezuela
+        </div>
+
+        <!-- Tarjeta de Horarios con Reloj Inteligente -->
+        <div class="status-card">
+            <div id="statusHeader" class="status-header closed">
+                <div id="statusDot" class="status-dot closed"></div> 
+                <span id="statusText">Cerrado en este momento</span>
+            </div>
+            <div class="status-days">Lunes a Viernes</div>
+            <div class="status-hours">
+                <i class="fa-regular fa-clock"></i> 7:30 AM - 5:30 PM (Hora local)
+            </div>
+        </div>
+
+        <!-- Botón 1: Instagram de DecoInstalaciones -->
+        <a href="https://www.instagram.com/decoinstalacionesve?stkn=MW5jcXg4OHJhN3o5aw==" target="_blank" class="link-button">
+            <div class="button-content">
+                <div class="icon-circle instagram-bg">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="button-text">
+                    <h3>Ver nuestros proyectos</h3>
+                    <p>Síguenos en Instagram</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <!-- Botón 2: Google Maps de DecoInstalaciones -->
+        <a href="https://maps.app.goo.gl/s7ALAbFep17Lpy3d8?g_st=ac" target="_blank" class="link-button">
+            <div class="button-content">
+                <div class="icon-circle maps-bg">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="button-text">
+                    <h3>Cómo llegar</h3>
+                    <p>Ubicación en Google Maps</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <!-- Botón 3: Reseña de Google para DecoInstalaciones -->
+        <a href="https://search.google.com/local/writereview?placeid=ChIJnRoZ1hYTZo4R4GL5OKPNjp8" target="_blank" class="link-button">
+            <div class="button-content">
+                <div class="icon-circle star-bg">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="button-text">
+                    <h3>Valora tu experiencia</h3>
+                    <p>Déjanos una reseña en Google</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <!-- Pie de página con el Logo de Altiora -->
+        <a href="https://www.instagram.com/altiora.ve?stkn=ano0ajcybTgyZjc=" target="_blank" class="footer-brand">
+            <span class="footer-text">Sitio web desarrollado por</span>
+            <img src="logo-altiora.png.png" alt="Altiora Logo" class="footer-logo-img">
+        </a>
+    </div>
+
+    <!-- Script de JavaScript para el Reloj -->
+    <script>
+        function verificarHorarioNegocio() {
+            const ahora = new Date();
+            const diaSemana = ahora.getDay();
+            const horaActual = ahora.getHours();
+            const minutoActual = ahora.getMinutes();
+
+            const minutosTotales = horaActual * 60 + minutoActual;
+
+            const esDiaLaboral = diaSemana >= 1 && diaSemana <= 5;
+            const estaEnHorario = minutosTotales >= 450 && minutosTotales <= 1050;
+
+            const statusHeader = document.getElementById('statusHeader');
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            if (esDiaLaboral && estaEnHorario) {
+                statusHeader.className = "status-header open";
+                statusDot.className = "status-dot open";
+                statusText.innerText = "Abierto ahora";
+            } else {
+                statusHeader.className = "status-header closed";
+                statusDot.className = "status-dot closed";
+                statusText.innerText = "Cerrado en este momento";
+            }
+        }
+
+        verificarHorarioNegocio();
+        setInterval(verificarHorarioNegocio, 30000);
+    </script>
+
+</body>
+</html>

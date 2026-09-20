@@ -15,7 +15,7 @@
         }
 
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('fondo.jpg.jpg') no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('fondo.jpg.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #ffffff;
             display: flex;
@@ -25,6 +25,7 @@
             padding: 20px;
         }
 
+        /* Tarjeta principal con fondo blanco translúcido esmerilado */
         .container {
             width: 100%;
             max-width: 420px;
@@ -32,6 +33,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 24px;
+            padding: 30px 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
         .logo-img {
@@ -45,28 +53,30 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
         .location {
             font-size: 14px;
-            color: #cccccc;
-            margin-bottom: 25px;
+            color: #f0f0f0;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 6px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
         }
 
-        /* Tarjeta de Horarios Dinámica */
+        /* Tarjeta de Horarios Dinámica con toque blanco */
         .status-card {
-            background: rgba(20, 20, 20, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 16px;
             padding: 16px 20px;
             width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             text-align: left;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .status-header {
@@ -74,19 +84,20 @@
             align-items: center;
             gap: 8px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 8px;
             transition: color 0.3s ease;
         }
 
         .status-header.open { color: #2ecc71; }
-        .status-header.closed { color: #95a5a6; }
+        .status-header.closed { color: #ff6b6b; }
 
         .status-dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .status-dot.open {
@@ -95,46 +106,48 @@
         }
 
         .status-dot.closed {
-            background-color: #7f8c8d;
-            box-shadow: none;
+            background-color: #ff4d4d;
+            box-shadow: 0 0 8px #ff4d4d;
         }
 
         .status-days {
             font-size: 13px;
-            color: #dddddd;
+            color: #ffffff;
             margin-bottom: 4px;
+            font-weight: 500;
         }
 
         .status-hours {
             font-size: 13px;
-            color: #aaaaaa;
+            color: #e0e0e0;
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        /* Botones de acción */
+        /* Botones de acción con toque translúcido */
         .link-button {
-            background: rgba(30, 30, 30, 0.75);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 40px;
-            padding: 14px 20px;
+            padding: 12px 18px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
             color: #ffffff;
             text-decoration: none;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
         }
 
         .link-button:hover {
-            background: rgba(50, 50, 50, 0.9);
+            background: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         .button-content {
@@ -150,13 +163,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 19px;
             color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        .instagram-bg { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .whatsapp-bg { background: linear-gradient(45deg, #25D366, #128C7E); }
         .maps-bg { background: linear-gradient(45deg, #4285F4, #34A853); }
         .star-bg { background: linear-gradient(45deg, #f1c40f, #f39c12); }
+        .instagram-bg { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 
         .button-text h3 {
             font-size: 15px;
@@ -166,45 +181,46 @@
 
         .button-text p {
             font-size: 12px;
-            color: #aaaaaa;
+            color: #dddddd;
             text-align: left;
         }
 
         .arrow-icon {
-            color: #aaaaaa;
+            color: #ffffff;
             font-size: 14px;
+            opacity: 0.8;
         }
 
         /* Pie de página corporativo con el logo de Altiora */
         .footer-brand {
-            margin-top: 10px; /* <--- Reducido para subirlo */
+            margin-top: 10px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            width: 80%;
-            padding-top: 8px; /* <--- Reducido para completar el espacio */
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 85%;
+            padding-top: 12px;
             text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px; !important;
+            gap: 4px;
             transition: opacity 0.3s ease;
         }
 
         .footer-text {
             font-size: 11px;
-            color: #888888;
+            color: #e0e0e0;
             letter-spacing: 0.3px;
         }
 
         .footer-logo-img {
-            height: 70px; /* Tamaño pequeño y elegante */
+            height: 65px;
             width: auto;
-            filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.4));
             transition: transform 0.2s ease;
         }
 
         .footer-brand:hover {
-            opacity: 0.85;
+            opacity: 0.9;
         }
 
         .footer-brand:hover .footer-logo-img {
@@ -227,7 +243,7 @@
         <div class="status-card">
             <div id="statusHeader" class="status-header closed">
                 <div id="statusDot" class="status-dot closed"></div> 
-                <span id="statusText">Cerrado en este momento</span>
+                <span id="statusText">Cerrado • Abrimos el lunes a las 7:30 AM</span>
             </div>
             <div class="status-days">Lunes a Viernes</div>
             <div class="status-hours">
@@ -235,15 +251,15 @@
             </div>
         </div>
 
-        <!-- Botón 1: Instagram de DecoInstalaciones -->
-        <a href="https://www.instagram.com/decoinstalacionesve?stkn=MW5jcXg4OHJhN3o5aw==" target="_blank" class="link-button">
+        <!-- Botón 1: WhatsApp de DecoInstalaciones -->
+        <a href="https://wa.me/584140751606" target="_blank" class="link-button">
             <div class="button-content">
-                <div class="icon-circle instagram-bg">
-                    <i class="fa-brands fa-instagram"></i>
+                <div class="icon-circle whatsapp-bg">
+                    <i class="fa-brands fa-whatsapp"></i>
                 </div>
                 <div class="button-text">
-                    <h3>Ver nuestros proyectos</h3>
-                    <p>Síguenos en Instagram</p>
+                    <h3>Atención inmediata</h3>
+                    <p>Contáctanos por WhatsApp</p>
                 </div>
             </div>
             <i class="fa-solid fa-chevron-right arrow-icon"></i>
@@ -277,25 +293,39 @@
             <i class="fa-solid fa-chevron-right arrow-icon"></i>
         </a>
 
-        <!-- Pie de página con el Logo de Altiora -->
+        <!-- Botón 4: Instagram de DecoInstalaciones -->
+        <a href="https://www.instagram.com/decoinstalacionesve?stkn=MW5jcXg4OHJhN3o5aw==" target="_blank" class="link-button">
+            <div class="button-content">
+                <div class="icon-circle instagram-bg">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="button-text">
+                    <h3>Ver nuestros proyectos</h3>
+                    <p>Síguenos en Instagram</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <!-- Pie de página 5: Desarrollado por Altiora -->
         <a href="https://www.instagram.com/altiora.ve?stkn=ano0ajcybTgyZjc=" target="_blank" class="footer-brand">
             <span class="footer-text">Sitio web desarrollado por</span>
             <img src="logo-altiora.png.png" alt="Altiora Logo" class="footer-logo-img">
         </a>
     </div>
 
-    <!-- Script de JavaScript para el Reloj -->
+    <!-- Script de JavaScript para el Reloj e Indicador Inteligente -->
     <script>
         function verificarHorarioNegocio() {
             const ahora = new Date();
-            const diaSemana = ahora.getDay();
+            const diaSemana = ahora.getDay(); // 0: Domingo, 6: Sábado
             const horaActual = ahora.getHours();
             const minutoActual = ahora.getMinutes();
 
             const minutosTotales = horaActual * 60 + minutoActual;
 
             const esDiaLaboral = diaSemana >= 1 && diaSemana <= 5;
-            const estaEnHorario = minutosTotales >= 450 && minutosTotales <= 1050;
+            const estaEnHorario = minutosTotales >= 450 && minutosTotales <= 1050; // 7:30 AM a 5:30 PM
 
             const statusHeader = document.getElementById('statusHeader');
             const statusDot = document.getElementById('statusDot');
@@ -308,7 +338,15 @@
             } else {
                 statusHeader.className = "status-header closed";
                 statusDot.className = "status-dot closed";
-                statusText.innerText = "Cerrado en este momento";
+                
+                // Mensajes dinámicos según el día
+                if (diaSemana === 0 || diaSemana === 6) { // Sábado o Domingo
+                    statusText.innerText = "Cerrado • Abrimos el lunes a las 7:30 AM";
+                } else if (diaSemana === 5 && minutosTotales > 1050) { // Viernes después de las 5:30 PM
+                    statusText.innerText = "Cerrado • Abrimos el lunes a las 7:30 AM";
+                } else {
+                    statusText.innerText = "Cerrado • Abrimos mañana a las 7:30 AM";
+                }
             }
         }
 
